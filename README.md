@@ -33,7 +33,7 @@ São testes automatizados que simulam um usuário real usando o site. Cada teste
 
 | Teste | O que faz | Resultado esperado |
 |-------|-----------|---------------------|
-| Transferência com sucesso | Cria duas contas, uma transfere R$ 10 para a outra | Mensagem “Transferencia realizada com sucesso” |
+| Transferência bem-sucedida | Cria duas contas, uma transfere R$ 10 para a outra | Mensagem “Transferencia realizada com sucesso” |
 | Transferir para a mesma conta | Tenta transferir da conta A para a conta A | Mensagem de erro “Nao pode transferir pra mesmo conta” |
 | Saldo insuficiente | Tenta transferir R$ 2.000 com saldo menor que isso | Mensagem “Você não tem saldo suficiente para essa transação” |
 

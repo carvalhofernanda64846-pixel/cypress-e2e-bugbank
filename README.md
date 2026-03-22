@@ -86,12 +86,6 @@ npm run test:headed
 
 ---
 
-## CI/CD
-
-Os testes rodam automaticamente no **GitHub Actions** a cada push ou pull request. O workflow está em `.github/workflows/cypress-e2e.yml`.
-
----
-
 ## Tecnologias
 
 - **Cypress** – ferramenta de testes E2E

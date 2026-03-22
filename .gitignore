@@ -8,6 +8,7 @@ yarn.lock
 pnpm-lock.yaml
 
 # Cypress
+cypress/e2e/docs/
 cypress/videos/
 cypress/screenshots/
 cypress/downloads/

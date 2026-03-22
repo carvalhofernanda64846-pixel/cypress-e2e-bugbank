@@ -25,6 +25,8 @@ jobs:
 
       - name: Run Cypress E2E tests
         run: npx cypress run
+        env:
+          TERM: xterm
 
       - name: Upload Cypress screenshots on failure
         uses: actions/upload-artifact@v4

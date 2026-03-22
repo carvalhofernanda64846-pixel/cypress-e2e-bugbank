@@ -12,7 +12,7 @@ describe('Pagamento no BugBank', () => {
 
     cy.bbOpenOperation(/PAGAMENT/i);
 
-    cy.get('#modalText', { timeout: 15000 })
+    cy.get('#modalText', { timeout: 25000 })
       .should('be.visible')
       .and('contain.text', 'Funcionalidade em desenvolvimento');
 

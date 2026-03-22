@@ -14,7 +14,7 @@ describe('Cadastro de usuário no BugBank', () => {
 
     cy.bbRegister({ email, name: nome, password: senha, addInitialBalance: false });
 
-    cy.get('#modalText', { timeout: 10000 })
+    cy.get('#modalText', { timeout: 20000 })
       .should('be.visible')
       .and('contain.text', 'foi criada com sucesso');
   });

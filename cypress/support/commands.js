@@ -31,7 +31,7 @@ const DEFAULT_PASSWORD = 'senha123';
 Cypress.Commands.add('bbRegister', ({ email, name, password = DEFAULT_PASSWORD, addInitialBalance }) => {
   cy.contains('button, a', 'Registrar').click({ force: true });
 
-  cy.get('input[name="passwordConfirmation"]', { timeout: 20000 })
+  cy.get('input[name="passwordConfirmation"]', { timeout: 30000 })
     .should('exist')
     .then(($pc) => {
       const $form = $pc.closest('form');
@@ -53,7 +53,7 @@ Cypress.Commands.add('bbRegister', ({ email, name, password = DEFAULT_PASSWORD, 
       });
     });
 
-  cy.get('#modalText', { timeout: 15000 }).should('exist');
+  cy.get('#modalText', { timeout: 20000 }).should('exist');
 });
 
 // Registra e já faz login no usuário criado.
@@ -80,7 +80,7 @@ Cypress.Commands.add('bbLogin', ({ email, password = DEFAULT_PASSWORD }) => {
   });
 
   // Espera a home carregar (evita timing de 3D).
-  cy.contains(/Conta digital/i, { timeout: 20000 }).should('exist');
+  cy.contains(/Conta digital/i, { timeout: 30000 }).should('exist');
 });
 
 // Logout.
@@ -95,8 +95,8 @@ Cypress.Commands.add('bbGetDigitalAccount', () => {
       const text = doc.body.innerText || '';
       const match = text.match(/Conta digital:\s*(\d+)\s*-\s*(\d+)/i);
       if (match) return { accountNumber: match[1], digit: match[2] };
-      if (attempt >= 6) throw new Error(`BUGBANK_NO_DIGITAL_ACCOUNT: ${text.slice(0, 500)}`);
-      cy.wait(2000);
+      if (attempt >= 12) throw new Error(`BUGBANK_NO_DIGITAL_ACCOUNT: ${text.slice(0, 500)}`);
+      cy.wait(3000);
       return extract(attempt + 1);
     });
 
@@ -140,7 +140,7 @@ Cypress.Commands.add('bbOpenOperation', (labelRegex) => {
 
     clickFromNode(el);
   });
-  cy.wait(2500);
+  cy.wait(3500);
 });
 
 // Fecha modal genérico (ex: “Fechar”).

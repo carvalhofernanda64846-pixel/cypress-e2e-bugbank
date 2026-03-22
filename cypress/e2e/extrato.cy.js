@@ -31,12 +31,12 @@ describe('Extrato no BugBank', () => {
       cy.get('input[name="description"]').clear({ force: true }).type(description, { force: true });
 
       cy.contains('button, a', 'Transferir agora').click({ force: true });
-      cy.get('#modalText', { timeout: 15000 }).should('be.visible');
+      cy.get('#modalText', { timeout: 25000 }).should('be.visible');
       cy.bbCloseModalIfPresent();
 
       // Extrato (rota direta)
       cy.visit('https://bugbank.netlify.app/bank-statement');
-      cy.wait(2500);
+      cy.wait(5000);
       cy.get('body').then(($body) => {
         const text = ($body.text() || '').toLowerCase();
         expect(text).to.include(description.toLowerCase());

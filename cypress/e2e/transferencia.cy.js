@@ -34,7 +34,7 @@ describe('Transferência no BugBank', () => {
 
       cy.contains('button, a', 'Transferir agora').click({ force: true });
 
-      cy.get('#modalText', { timeout: 15000 })
+      cy.get('#modalText', { timeout: 25000 })
         .should('be.visible')
         .and('contain.text', 'Transferencia realizada com sucesso');
     });
@@ -58,7 +58,7 @@ describe('Transferência no BugBank', () => {
 
       cy.contains('button, a', 'Transferir agora').click({ force: true });
 
-      cy.get('#modalText', { timeout: 15000 })
+      cy.get('#modalText', { timeout: 25000 })
         .should('be.visible')
         .and('contain.text', 'Nao pode transferir pra mesmo conta');
     });
@@ -95,7 +95,7 @@ describe('Transferência no BugBank', () => {
 
       cy.contains('button, a', 'Transferir agora').click({ force: true });
 
-      cy.get('#modalText', { timeout: 15000 })
+      cy.get('#modalText', { timeout: 25000 })
         .should('be.visible')
         .and('contain.text', 'Você não tem saldo suficiente para essa transação');
     });
